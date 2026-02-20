@@ -1,0 +1,20 @@
+@import "tailwindcss";
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24
+}
+
+.active-nav {
+  background-color: rgba(19, 127, 236, 0.1);
+  color: #137FEC;
+  border-right: 3px solid #137FEC;
+}
