@@ -17,7 +17,7 @@ export function Banner() {
                 <div className="relative w-full max-w-md h-[450px] mt-10 lg:mt-0">
                     <div className="frame absolute inset-0 transform -rotate-2 hover:rotate-0 transition-transform cursor-pointer">
                         <div className="tape bg-[var(--clr-blue)] -top-4 left-1/2 -translate-x-1/2 rotate-3"></div>
-                        <div className="w-full h-full bg-cover bg-center" style={{ backgroundImage: 'url("src/assets/img/pic_1.jpg")' }}></div>
+                        <div className="w-full h-full bg-cover bg-center" style={{ backgroundImage: 'url("https://davidortizjr.github.io/old-portfolio/school/webdev/Gallery/memory_lane/pic_1.jpg")' }}></div>
                         <p className="absolute bottom-2 left-0 w-full text-center text-xl text-slate-700">Us in 2026! ❤️</p>
                     </div>
                 </div>
