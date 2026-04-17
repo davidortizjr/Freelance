@@ -1,3 +1,6 @@
+import { Container } from '../design/Container'
+import { SectionShell } from '../design/SectionShell'
+
 const services = [
     {
         number: '01',
@@ -21,8 +24,8 @@ const services = [
 
 export function ServicesSection() {
     return (
-        <section id="process" className="bg-[#fcf9f8] py-20 sm:py-28">
-            <div className="mx-auto max-w-screen-2xl px-4 sm:px-8 lg:px-10">
+        <SectionShell id="process" tone="base" spacing="normal">
+            <Container>
                 <div className="grid grid-cols-12 gap-10 lg:gap-12">
                     <div className="col-span-12 md:col-span-4">
                         <span className="mb-6 block text-xs font-bold uppercase tracking-[0.18em] text-[var(--color-primary)]">
@@ -49,7 +52,7 @@ export function ServicesSection() {
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </Container>
+        </SectionShell>
     )
 }

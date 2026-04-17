@@ -1,3 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@400;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap');
+@import "tailwindcss";
+
+:root {
+  --color-background: #fcf9f8;
+  --color-surface: #ffffff;
+  --color-surface-soft: #f3f0ef;
+  --color-surface-muted: #f0edec;
+  --color-soft: #f4f4f2;
+  --color-text: #1c1b1b;
+  --color-text-muted: #434656;
+  --color-primary: #0041c8;
+  --color-primary-strong: #0055ff;
+  --color-border: rgba(0, 0, 0, 0.08);
+  --color-border-strong: #c3c5d9;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: var(--color-background);
+  color: var(--color-text);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+body,
+button,
+a {
+  font-family: inherit;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
 .app-shell {
   min-height: 100vh;
   background: var(--color-background);

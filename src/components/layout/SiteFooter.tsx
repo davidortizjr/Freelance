@@ -23,12 +23,6 @@ export function SiteFooter() {
                     </div>
                 </div>
                 <div className="space-y-4">
-                    <span className="text-sm font-bold uppercase tracking-[0.22em] text-zinc-400">Headquarters</span>
-                    <p className="text-zinc-500">
-                        1200 Creative Way, Ste 400
-                        <br />
-                        San Francisco, CA 94103
-                    </p>
                     <div className="pt-4">
                         <a className="font-bold text-[var(--color-primary)]" href="mailto:hello@curator.agency">
                             hello@curator.agency

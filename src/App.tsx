@@ -1,39 +1,41 @@
 import './App.css'
 
-import { useState } from 'react'
+import { useEffect } from 'react'
+import { Navigate, Route, Routes } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
 
-import { HomePage } from './components/home/HomePage'
-import { SiteFooter } from './components/layout/SiteFooter'
-import { SiteHeader } from './components/layout/SiteHeader'
-import { ProjectDetailPage } from './components/project/ProjectDetailPage'
-import { projectDetails, projects } from './data/portfolio.ts'
-import type { ProjectId } from './types/portfolio'
+import { AboutRoute } from './pages/AboutRoute'
+import { ContactRoute } from './pages/ContactRoute'
+import { HomeRoute } from './pages/HomeRoute'
+import { ProcessRoute } from './pages/ProcessRoute'
+import { ProjectRoute } from './pages/ProjectRoute'
+import { StartProjectRoute } from './pages/StartProjectRoute'
+
+function ScrollToTop() {
+    const { pathname } = useLocation()
+
+    useEffect(() => {
+        window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
+    }, [pathname])
+
+    return null
+}
 
 function App() {
-    const [selectedProjectId, setSelectedProjectId] = useState<ProjectId | null>(null)
-
-    const selectedProject = selectedProjectId ? projectDetails[selectedProjectId] : null
-
-    return selectedProject ? (
-        <div className="app-shell">
-            <ProjectDetailPage
-                project={selectedProject}
-                projects={projects}
-                onHomeClick={() => setSelectedProjectId(null)}
-                onSelectNextProject={setSelectedProjectId}
-            />
-            <SiteFooter />
-        </div>
-    ) : (
-        <div className="app-shell">
-            <SiteHeader
-                variant="home"
-                onHomeClick={() => setSelectedProjectId(null)}
-                onStartProjectClick={() => setSelectedProjectId(projects[0].id)}
-            />
-            <HomePage projects={projects} onSelectProject={setSelectedProjectId} />
-            <SiteFooter />
-        </div>
+    return (
+        <>
+            <ScrollToTop />
+            <Routes>
+                <Route path="/" element={<HomeRoute />} />
+                <Route path="/about-process" element={<Navigate to="/about" replace />} />
+                <Route path="/about" element={<AboutRoute />} />
+                <Route path="/process" element={<ProcessRoute />} />
+                <Route path="/contact" element={<ContactRoute />} />
+                <Route path="/projects/:projectId" element={<ProjectRoute />} />
+                <Route path="/start-project" element={<StartProjectRoute />} />
+                <Route path="*" element={<Navigate to="/" replace />} />
+            </Routes>
+        </>
     )
 }
 
